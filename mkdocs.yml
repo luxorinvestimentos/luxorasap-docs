@@ -1,7 +1,7 @@
 site_name: LuxorASAP
 site_description: "Documentação oficial do toolbox Luxor para ingestão, leitura e análise de dados financeiros."
 site_author: Luxor Group
-repo_url: https://github.com/luxor-group/luxorasap
+repo_url: https://github.com/luxorinvestimentos/luxor-asap/
 theme:
   name: material
   logo: images/luxor_logo.png
