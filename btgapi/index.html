@@ -50,6 +50,8 @@
       
     
     
+      <link rel="stylesheet" href="../styles/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -92,8 +94,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href=".." title="LuxorASAP" class="md-header__button md-logo" aria-label="LuxorASAP" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../images/luxor_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -202,8 +203,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="LuxorASAP" class="md-nav__button md-logo" aria-label="LuxorASAP" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../images/luxor_logo.png" alt="logo">
 
     </a>
     LuxorASAP
@@ -347,11 +347,152 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funcoes" class="md-nav__link">
+  <a href="#autenticacao" class="md-nav__link">
     <span class="md-ellipsis">
-      Funções
+      📌 Autenticação
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="📌 Autenticação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_access_token" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_access_token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      📑 Relatórios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📑 Relatórios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request_portfolio" class="md-nav__link">
+    <span class="md-ellipsis">
+      request_portfolio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_report_ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      check_report_ticket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#await_report_ticket_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      await_report_ticket_result
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_zip_to_dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      process_zip_to_dfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request_investors_transactions_report" class="md-nav__link">
+    <span class="md-ellipsis">
+      request_investors_transactions_report
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request_fundflow_report" class="md-nav__link">
+    <span class="md-ellipsis">
+      request_fundflow_report
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trades-offshore" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 Trades Offshore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 Trades Offshore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submit_offshore_equity_trades" class="md-nav__link">
+    <span class="md-ellipsis">
+      submit_offshore_equity_trades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#await_transaction_ticket_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      await_transaction_ticket_result
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Exceções
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ Exceções">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#btgapierror" class="md-nav__link">
+    <span class="md-ellipsis">
+      BTGApiError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -467,11 +608,152 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funcoes" class="md-nav__link">
+  <a href="#autenticacao" class="md-nav__link">
     <span class="md-ellipsis">
-      Funções
+      📌 Autenticação
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="📌 Autenticação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_access_token" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_access_token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      📑 Relatórios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📑 Relatórios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request_portfolio" class="md-nav__link">
+    <span class="md-ellipsis">
+      request_portfolio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_report_ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      check_report_ticket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#await_report_ticket_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      await_report_ticket_result
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_zip_to_dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      process_zip_to_dfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request_investors_transactions_report" class="md-nav__link">
+    <span class="md-ellipsis">
+      request_investors_transactions_report
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request_fundflow_report" class="md-nav__link">
+    <span class="md-ellipsis">
+      request_fundflow_report
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trades-offshore" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 Trades Offshore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 Trades Offshore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submit_offshore_equity_trades" class="md-nav__link">
+    <span class="md-ellipsis">
+      submit_offshore_equity_trades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#await_transaction_ticket_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      await_transaction_ticket_result
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Exceções
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ Exceções">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#btgapierror" class="md-nav__link">
+    <span class="md-ellipsis">
+      BTGApiError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -495,13 +777,75 @@
 
 
 <h1 id="modulo-btgapi">Módulo <code>btgapi</code></h1>
-<p>Integração com APIs do BTG Pactual.</p>
-<h2 id="funcoes">Funções</h2>
+<p>Este módulo oferece um wrapper autenticado para integração com as APIs do BTG Pactual, incluindo relatórios, boletas offshore e autenticação JWT.</p>
+<hr />
+<h2 id="autenticacao">📌 Autenticação</h2>
+<h3 id="get_access_token"><code>get_access_token</code></h3>
+<p>Obtém um token JWT válido (~1h) para autenticação nas APIs do BTG.</p>
+<pre><code class="language-python">from luxorasap.btgapi import get_access_token
+
+token = get_access_token(test_env=True)
+</code></pre>
+<p><strong>Parâmetros:</strong></p>
 <ul>
-<li><code>get_access_token</code></li>
-<li><code>request_portfolio</code></li>
-<li>...</li>
+<li><code>client_id</code> (<code>str</code>, opcional): ID do cliente. Se <code>None</code>, será lido de variável de ambiente.</li>
+<li><code>client_secret</code> (<code>str</code>, opcional): Segredo do cliente. Se <code>None</code>, será lido de variável de ambiente.</li>
+<li><code>test_env</code> (<code>bool</code>): Define se usa ambiente de testes. Default: <code>True</code>.</li>
+<li><code>timeout</code> (<code>int</code>): Timeout em segundos. Default: <code>20</code>.</li>
 </ul>
+<p><strong>Retorna:</strong> <code>str</code> — Token de autenticação.<br />
+<strong>Erros:</strong> <code>BTGApiError</code></p>
+<hr />
+<h2 id="relatorios">📑 Relatórios</h2>
+<h3 id="request_portfolio"><code>request_portfolio</code></h3>
+<p>Solicita relatório de carteira para um fundo.</p>
+<pre><code class="language-python">ticket = request_portfolio(token, &quot;FUND NAME&quot;, start_date, end_date)
+</code></pre>
+<p><strong>Parâmetros:</strong>
+- <code>token</code> (<code>str</code>): Token JWT.
+- <code>fund_name</code> (<code>str</code>)
+- <code>start_date</code>, <code>end_date</code> (<code>datetime.date</code>)
+- <code>format</code> (<code>str</code>): <code>"excel"</code>, <code>"xml5"</code> ou <code>"pdf"</code></p>
+<p><strong>Retorna:</strong> <code>str</code> — Ticket da requisição.</p>
+<hr />
+<h3 id="check_report_ticket"><code>check_report_ticket</code></h3>
+<p>Verifica se um ticket foi processado.</p>
+<p><strong>Retorna:</strong> <code>bytes</code> se o conteúdo estiver pronto.<br />
+<strong>Erros:</strong> <code>BTGApiError</code> em caso de pendência ou erro.</p>
+<hr />
+<h3 id="await_report_ticket_result"><code>await_report_ticket_result</code></h3>
+<p>Aguarda até que o ticket esteja pronto e retorna conteúdo binário (<code>bytes</code>).</p>
+<pre><code class="language-python">zip_bytes = await_report_ticket_result(token, ticket)
+</code></pre>
+<hr />
+<h3 id="process_zip_to_dfs"><code>process_zip_to_dfs</code></h3>
+<p>Extrai todos os arquivos <code>.zip</code> e retorna <code>dict[str, pd.DataFrame]</code>.</p>
+<pre><code class="language-python">dfs = process_zip_to_dfs(zip_bytes)
+</code></pre>
+<hr />
+<h3 id="request_investors_transactions_report"><code>request_investors_transactions_report</code></h3>
+<p>Solicita relatório de movimentações por cotistas (RTA).</p>
+<hr />
+<h3 id="request_fundflow_report"><code>request_fundflow_report</code></h3>
+<p>Gera relatório FundFlow (RTA) com base em datas e fundo.</p>
+<pre><code class="language-python">ticket = request_fundflow_report(token, start_date, end_date, fund_name=&quot;FUND&quot;)
+</code></pre>
+<hr />
+<h2 id="trades-offshore">📥 Trades Offshore</h2>
+<h3 id="submit_offshore_equity_trades"><code>submit_offshore_equity_trades</code></h3>
+<p>Submete lista de trades offshore (equities).</p>
+<pre><code class="language-python">ticket = submit_offshore_equity_trades(token, trades=[{...}], test_env=True)
+</code></pre>
+<hr />
+<h3 id="await_transaction_ticket_result"><code>await_transaction_ticket_result</code></h3>
+<p>Consulta e espera o resultado de uma boleta enviada.</p>
+<pre><code class="language-python">df = await_transaction_ticket_result(token, ticket)
+</code></pre>
+<p><strong>Retorna:</strong> <code>pd.DataFrame</code> com status, ticket, referência, mensagens etc.</p>
+<hr />
+<h2 id="excecoes">⚠️ Exceções</h2>
+<h3 id="btgapierror"><code>BTGApiError</code></h3>
+<p>Exceção customizada lançada em qualquer erro de autenticação, requisição ou processamento.</p>
 
 
 

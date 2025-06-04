@@ -50,6 +50,8 @@
       
     
     
+      <link rel="stylesheet" href="../styles/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -92,8 +94,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href=".." title="LuxorASAP" class="md-header__button md-logo" aria-label="LuxorASAP" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../images/luxor_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -202,8 +203,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="LuxorASAP" class="md-nav__button md-logo" aria-label="LuxorASAP" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../images/luxor_logo.png" alt="logo">
 
     </a>
     LuxorASAP
@@ -370,9 +370,201 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exemplos" class="md-nav__link">
+  <a href="#classe-luxorquery" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemplos
+      🔍 Classe LuxorQuery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Classe LuxorQuery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instanciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instanciação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Tabelas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 Tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_tablename-str-pddataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_table(name: str) -&gt; pd.DataFrame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table_existsname-str-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      table_exists(name: str) -&gt; bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Preços
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Preços">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_priceasset-str-px_date-str-datetime-float-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_price(asset: str, px_date: str | datetime) -&gt; float | None
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pricesasset-str-previous_date-recent_date-period-strnone-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_prices(asset: str, previous_date, recent_date, period: str=None) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analises" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Análises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Análises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_pct_changeasset-str-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pct_change(asset: str, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pct_changesasset-str-previous_date-recent_date-period-str-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pct_changes(asset: str, previous_date, recent_date, period: str) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_volatilityasset-str-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      calculate_volatility(asset: str, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_price_correlationasset1-asset2-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      calculate_price_correlation(asset1, asset2, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundos-e-carteiras" class="md-nav__link">
+    <span class="md-ellipsis">
+      💼 Fundos e Carteiras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💼 Fundos e Carteiras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_positions_and_movementsfund-str-date-pddataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_positions_and_movements(fund: str, date) -&gt; pd.DataFrame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_fund_aumfund-str-date-datetimedate-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_fund_aum(fund: str, date: datetime.date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_fund_pnlfund-str-previous_date-datetimedate-recent_date-datetimedate-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_fund_pnl(fund: str, previous_date: datetime.date, recent_date: datetime.date) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_return_analysisasset_or_df-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_return_analysis(asset_or_df, ...) -&gt; dict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Outros
     </span>
   </a>
   
@@ -467,9 +659,201 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exemplos" class="md-nav__link">
+  <a href="#classe-luxorquery" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemplos
+      🔍 Classe LuxorQuery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Classe LuxorQuery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instanciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instanciação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Tabelas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 Tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_tablename-str-pddataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_table(name: str) -&gt; pd.DataFrame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table_existsname-str-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      table_exists(name: str) -&gt; bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Preços
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Preços">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_priceasset-str-px_date-str-datetime-float-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_price(asset: str, px_date: str | datetime) -&gt; float | None
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pricesasset-str-previous_date-recent_date-period-strnone-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_prices(asset: str, previous_date, recent_date, period: str=None) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analises" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Análises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Análises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_pct_changeasset-str-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pct_change(asset: str, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pct_changesasset-str-previous_date-recent_date-period-str-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pct_changes(asset: str, previous_date, recent_date, period: str) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_volatilityasset-str-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      calculate_volatility(asset: str, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_price_correlationasset1-asset2-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      calculate_price_correlation(asset1, asset2, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundos-e-carteiras" class="md-nav__link">
+    <span class="md-ellipsis">
+      💼 Fundos e Carteiras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💼 Fundos e Carteiras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_positions_and_movementsfund-str-date-pddataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_positions_and_movements(fund: str, date) -&gt; pd.DataFrame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_fund_aumfund-str-date-datetimedate-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_fund_aum(fund: str, date: datetime.date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_fund_pnlfund-str-previous_date-datetimedate-recent_date-datetimedate-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_fund_pnl(fund: str, previous_date: datetime.date, recent_date: datetime.date) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_return_analysisasset_or_df-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_return_analysis(asset_or_df, ...) -&gt; dict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Outros
     </span>
   </a>
   
@@ -495,10 +879,63 @@
 
 
 <h1 id="modulo-datareader">Módulo <code>datareader</code></h1>
-<p>Interface <code>LuxorQuery</code> para consulta a tabelas e preços.</p>
-<h2 id="exemplos">Exemplos</h2>
+<p>Este módulo provê a interface <code>LuxorQuery</code> para leitura de tabelas, séries temporais e análises financeiras dentro do data lake da Luxor (ADLS).</p>
+<hr />
+<h2 id="classe-luxorquery">🔍 Classe <code>LuxorQuery</code></h2>
+<h3 id="instanciacao">Instanciação</h3>
 <pre><code class="language-python">from luxorasap.datareader import LuxorQuery
+
+lq = LuxorQuery()
 </code></pre>
+<hr />
+<h2 id="tabelas">📄 Tabelas</h2>
+<h3 id="get_tablename-str-pddataframe"><code>get_table(name: str) -&gt; pd.DataFrame</code></h3>
+<p>Lê uma tabela Parquet da camada enriquecida do ADLS.</p>
+<pre><code class="language-python">df = lq.get_table(&quot;trades&quot;)
+</code></pre>
+<h3 id="table_existsname-str-bool"><code>table_exists(name: str) -&gt; bool</code></h3>
+<p>Verifica se a tabela está registrada no catálogo.</p>
+<hr />
+<h2 id="precos">📈 Preços</h2>
+<h3 id="get_priceasset-str-px_date-str-datetime-float-none"><code>get_price(asset: str, px_date: str | datetime) -&gt; float | None</code></h3>
+<p>Obtém o preço de fechamento pontual de um ativo em uma data.</p>
+<pre><code class="language-python">price = lq.get_price(&quot;msft us equity&quot;, px_date=&quot;2024-12-31&quot;)
+</code></pre>
+<h3 id="get_pricesasset-str-previous_date-recent_date-period-strnone-pdseries"><code>get_prices(asset: str, previous_date, recent_date, period: str=None) -&gt; pd.Series</code></h3>
+<p>Retorna série de preços para o ativo. Period pode ser mtd, ytd, qtr, 1m, 2m, 3m, etc.</p>
+<pre><code class="language-python">series = lq.get_prices(&quot;msft us equity&quot;, recent_date=datetime.date(2024,12,31), period='ytd')
+</code></pre>
+<hr />
+<h2 id="analises">📊 Análises</h2>
+<h3 id="get_pct_changeasset-str-previous_date-recent_date-float"><code>get_pct_change(asset: str, previous_date, recent_date) -&gt; float</code></h3>
+<p>Retorna a variação percentual no período.</p>
+<h3 id="get_pct_changesasset-str-previous_date-recent_date-period-str-pdseries"><code>get_pct_changes(asset: str, previous_date, recent_date, period: str) -&gt; pd.Series</code></h3>
+<p>Retorna a série de retornos diários. Period pode ser mtd, ytd, qtr, 1m, 2m, 3m, etc.</p>
+<hr />
+<h3 id="calculate_volatilityasset-str-previous_date-recent_date-float"><code>calculate_volatility(asset: str, previous_date, recent_date) -&gt; float</code></h3>
+<p>Volatilidade anualizada de retornos diários (std * sqrt(252)).</p>
+<hr />
+<h3 id="calculate_price_correlationasset1-asset2-previous_date-recent_date-float"><code>calculate_price_correlation(asset1, asset2, previous_date, recent_date) -&gt; float</code></h3>
+<p>Correlação entre os retornos de dois ativos no período.</p>
+<hr />
+<h2 id="fundos-e-carteiras">💼 Fundos e Carteiras</h2>
+<h3 id="get_positions_and_movementsfund-str-date-pddataframe"><code>get_positions_and_movements(fund: str, date) -&gt; pd.DataFrame</code></h3>
+<p>Devolve posição do fundo com compras/vendas no dia.</p>
+<hr />
+<h3 id="get_fund_aumfund-str-date-datetimedate-float"><code>get_fund_aum(fund: str, date:  datetime.date) -&gt; float</code></h3>
+<p>Retorna o AUM (Assets Under Management) de um fundo numa data.</p>
+<hr />
+<h3 id="get_fund_pnlfund-str-previous_date-datetimedate-recent_date-datetimedate-pdseries"><code>get_fund_pnl(fund: str, previous_date: datetime.date, recent_date: datetime.date) -&gt; pd.Series</code></h3>
+<p>Série com o lucro/prejuízo do fundo no período.</p>
+<hr />
+<h3 id="run_return_analysisasset_or_df-dict"><code>run_return_analysis(asset_or_df, ...) -&gt; dict</code></h3>
+<p>Análise de performance: CAGR, drawdown, sharpe, etc.</p>
+<hr />
+<h2 id="outros">🧠 Outros</h2>
+<ul>
+<li>Datas devem ser <code>datetime.date</code></li>
+<li>Preços e retornos sempre assumem coluna <code>"Price"</code> por padrão</li>
+</ul>
 
 
 
