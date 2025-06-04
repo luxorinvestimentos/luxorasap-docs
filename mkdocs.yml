@@ -4,6 +4,7 @@ site_author: Luxor Group
 repo_url: https://github.com/luxor-group/luxorasap
 theme:
   name: material
+  logo: images/luxor_logo.png
   language: pt
   features:
     - navigation.instant
@@ -12,7 +13,8 @@ theme:
   palette:
     primary: blue
     accent: light blue
-
+extra_css:
+  - styles/extra.css
 nav:
   - Início: index.md
   - Módulos:

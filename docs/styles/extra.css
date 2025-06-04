@@ -1,0 +1,16 @@
+/* Altera a cor de fundo do cabeçalho */
+.md-header {
+  background-color: #242528;
+}
+
+/* Altera a cor dos links ativos no menu */
+.md-nav__item--active > .md-nav__link {
+  color: #faa517;
+}
+
+/* Define a fonte principal */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
