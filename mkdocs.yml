@@ -1,0 +1,22 @@
+site_name: LuxorASAP
+site_description: "Documentação oficial do toolbox Luxor para ingestão, leitura e análise de dados financeiros."
+site_author: Luxor Group
+repo_url: https://github.com/luxor-group/luxorasap
+theme:
+  name: material
+  language: pt
+  features:
+    - navigation.instant
+    - content.code.copy
+    - navigation.sections
+  palette:
+    primary: blue
+    accent: light blue
+
+nav:
+  - Início: index.md
+  - Módulos:
+    - btgapi: btgapi.md
+    - datareader: datareader.md
+    - ingest: ingest.md
+    - utils: utils.md
