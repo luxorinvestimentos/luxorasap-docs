@@ -1,0 +1,2046 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação completa do stack LuxorASAP">
+      
+      
+      
+        <link rel="canonical" href="https://SEU_DOMINIO/luxorasap/datareader/">
+      
+      
+        <link rel="prev" href="../btgapi/">
+      
+      
+        <link rel="next" href="../ingest/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>datareader - LuxorASAP Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-datareader" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LuxorASAP Docs" class="md-header__button md-logo" aria-label="LuxorASAP Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo_png.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LuxorASAP Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              datareader
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="Alternar Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar Dark Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LuxorASAP Docs" class="md-nav__button md-logo" aria-label="LuxorASAP Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo_png.png" alt="logo">
+
+    </a>
+    LuxorASAP Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LuxorASAP Onedrive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            LuxorASAP Onedrive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/architecture/file_tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estrutura de Arquivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/architecture/bloomberg_data_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bloomberg Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/architecture/pipeline_luxorASAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pipeline run_luxorASAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/architecture/pipeline_carteira_online/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pipeline Carteira Online
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/architecture/pipeline_returns_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pipeline Relatório de Retornos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/architecture/pipeline_source_bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pipeline Source Bases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_1" id="__nav_1_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    carteira_online.production
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            carteira_online.production
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/carteira_online/production/portfolio_builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    portfolio_builder.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/carteira_online/production/return_calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    return_calculator.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/carteira_online/production/cash_calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    cash_calculator.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/carteira_online/production/btg_data_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    btg_data_extraction.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/carteira_online/production/asset_data_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    asset_data_extraction.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/carteira_online/production/historical_data_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    historical_data_extraction.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/carteira_online/production/leitor_carteira_excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    leitor_carteira_excel.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/carteira_online/production/onedrive_file_redirect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    onedrive_file_redirect.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_2" id="__nav_1_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    source_bases.scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            source_bases.scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases/scripts/hist_concentration_updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    hist_concentration_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases/scripts/custom_funds_quotas_updater.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    custom_funds_quotas_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases/scripts/non_bbg_data_updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    non_bbg_data_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases/scripts/daily_pnl_updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    daily_pnl_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases/scripts/historical_quotas_updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    historical_quotas_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases/scripts/risk_metrics_updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    risk_metrics_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases/scripts/us_cash_updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    us_cash_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases/scripts/swaps_updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    swaps_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/run_luxorASAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    run_luxorASAP.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/market_data_extractor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    market_data_extractor.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/market_data_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    market_data_loader.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/source_bases_updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    source_bases_updater.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/luxorDB_datareader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    luxorDB_datareader.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/modules/luxorDB_dataloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    luxorDB_dataloader.py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/planilhas/planilhas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planilhas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How To
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            How To
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/how_to/add_new_asset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adicionar novo ativo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../luxorasap_onedrive/how_to/create_price_series/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criar série de preços
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LuxorASAP (PyPI)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            LuxorASAP (PyPI)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../btgapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    btgapi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    datareader
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    datareader
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classe-luxorquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Classe LuxorQuery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Classe LuxorQuery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instanciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instanciação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Tabelas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 Tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_tablename-str-pddataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_table(name: str) -&gt; pd.DataFrame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table_existsname-str-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      table_exists(name: str) -&gt; bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Preços
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Preços">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_priceasset-str-px_date-str-datetime-float-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_price(asset: str, px_date: str | datetime) -&gt; float | None
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pricesasset-str-previous_date-recent_date-period-strnone-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_prices(asset: str, previous_date, recent_date, period: str=None) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analises" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Análises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Análises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_pct_changeasset-str-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pct_change(asset: str, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pct_changesasset-str-previous_date-recent_date-period-str-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pct_changes(asset: str, previous_date, recent_date, period: str) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_volatilityasset-str-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      calculate_volatility(asset: str, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_price_correlationasset1-asset2-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      calculate_price_correlation(asset1, asset2, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundos-e-carteiras" class="md-nav__link">
+    <span class="md-ellipsis">
+      💼 Fundos e Carteiras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💼 Fundos e Carteiras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_positions_and_movementsfund-str-date-pddataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_positions_and_movements(fund: str, date) -&gt; pd.DataFrame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_fund_aumfund-str-date-datetimedate-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_fund_aum(fund: str, date: datetime.date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_fund_pnlfund-str-previous_date-datetimedate-recent_date-datetimedate-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_fund_pnl(fund: str, previous_date: datetime.date, recent_date: datetime.date) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_return_analysisasset_or_df-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_return_analysis(asset_or_df, ...) -&gt; dict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Outros
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ingest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classe-luxorquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Classe LuxorQuery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Classe LuxorQuery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instanciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instanciação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Tabelas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 Tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_tablename-str-pddataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_table(name: str) -&gt; pd.DataFrame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table_existsname-str-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      table_exists(name: str) -&gt; bool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Preços
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Preços">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_priceasset-str-px_date-str-datetime-float-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_price(asset: str, px_date: str | datetime) -&gt; float | None
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pricesasset-str-previous_date-recent_date-period-strnone-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_prices(asset: str, previous_date, recent_date, period: str=None) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analises" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Análises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Análises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_pct_changeasset-str-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pct_change(asset: str, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pct_changesasset-str-previous_date-recent_date-period-str-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pct_changes(asset: str, previous_date, recent_date, period: str) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_volatilityasset-str-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      calculate_volatility(asset: str, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_price_correlationasset1-asset2-previous_date-recent_date-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      calculate_price_correlation(asset1, asset2, previous_date, recent_date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundos-e-carteiras" class="md-nav__link">
+    <span class="md-ellipsis">
+      💼 Fundos e Carteiras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💼 Fundos e Carteiras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_positions_and_movementsfund-str-date-pddataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_positions_and_movements(fund: str, date) -&gt; pd.DataFrame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_fund_aumfund-str-date-datetimedate-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_fund_aum(fund: str, date: datetime.date) -&gt; float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_fund_pnlfund-str-previous_date-datetimedate-recent_date-datetimedate-pdseries" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_fund_pnl(fund: str, previous_date: datetime.date, recent_date: datetime.date) -&gt; pd.Series
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_return_analysisasset_or_df-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_return_analysis(asset_or_df, ...) -&gt; dict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Outros
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="modulo-datareader">Módulo <code>datareader</code><a class="headerlink" href="#modulo-datareader" title="Permanent link">¶</a></h1>
+<p>Este módulo provê a interface <code>LuxorQuery</code> para leitura de tabelas, séries temporais e análises financeiras dentro do data lake da Luxor (ADLS).</p>
+<hr />
+<h2 id="classe-luxorquery">🔍 Classe <code>LuxorQuery</code><a class="headerlink" href="#classe-luxorquery" title="Permanent link">¶</a></h2>
+<h3 id="instanciacao">Instanciação<a class="headerlink" href="#instanciacao" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">luxorasap.datareader</span><span class="w"> </span><span class="kn">import</span> <span class="n">LuxorQuery</span>
+
+<span class="n">lq</span> <span class="o">=</span> <span class="n">LuxorQuery</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h2 id="tabelas">📄 Tabelas<a class="headerlink" href="#tabelas" title="Permanent link">¶</a></h2>
+<h3 id="get_tablename-str-pddataframe"><code>get_table(name: str) -&gt; pd.DataFrame</code><a class="headerlink" href="#get_tablename-str-pddataframe" title="Permanent link">¶</a></h3>
+<p>Lê uma tabela Parquet da camada enriquecida do ADLS.</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">lq</span><span class="o">.</span><span class="n">get_table</span><span class="p">(</span><span class="s2">&quot;trades&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="table_existsname-str-bool"><code>table_exists(name: str) -&gt; bool</code><a class="headerlink" href="#table_existsname-str-bool" title="Permanent link">¶</a></h3>
+<p>Verifica se a tabela está registrada no catálogo.</p>
+<hr />
+<h2 id="precos">📈 Preços<a class="headerlink" href="#precos" title="Permanent link">¶</a></h2>
+<h3 id="get_priceasset-str-px_date-str-datetime-float-none"><code>get_price(asset: str, px_date: str | datetime) -&gt; float | None</code><a class="headerlink" href="#get_priceasset-str-px_date-str-datetime-float-none" title="Permanent link">¶</a></h3>
+<p>Obtém o preço de fechamento pontual de um ativo em uma data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">price</span> <span class="o">=</span> <span class="n">lq</span><span class="o">.</span><span class="n">get_price</span><span class="p">(</span><span class="s2">&quot;msft us equity&quot;</span><span class="p">,</span> <span class="n">px_date</span><span class="o">=</span><span class="s2">&quot;2024-12-31&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="get_pricesasset-str-previous_date-recent_date-period-strnone-pdseries"><code>get_prices(asset: str, previous_date, recent_date, period: str=None) -&gt; pd.Series</code><a class="headerlink" href="#get_pricesasset-str-previous_date-recent_date-period-strnone-pdseries" title="Permanent link">¶</a></h3>
+<p>Retorna série de preços para o ativo. Period pode ser mtd, ytd, qtr, 1m, 2m, 3m, etc.</p>
+<div class="highlight"><pre><span></span><code><span class="n">series</span> <span class="o">=</span> <span class="n">lq</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="s2">&quot;msft us equity&quot;</span><span class="p">,</span> <span class="n">recent_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">31</span><span class="p">),</span> <span class="n">period</span><span class="o">=</span><span class="s1">&#39;ytd&#39;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="analises">📊 Análises<a class="headerlink" href="#analises" title="Permanent link">¶</a></h2>
+<h3 id="get_pct_changeasset-str-previous_date-recent_date-float"><code>get_pct_change(asset: str, previous_date, recent_date) -&gt; float</code><a class="headerlink" href="#get_pct_changeasset-str-previous_date-recent_date-float" title="Permanent link">¶</a></h3>
+<p>Retorna a variação percentual no período.</p>
+<h3 id="get_pct_changesasset-str-previous_date-recent_date-period-str-pdseries"><code>get_pct_changes(asset: str, previous_date, recent_date, period: str) -&gt; pd.Series</code><a class="headerlink" href="#get_pct_changesasset-str-previous_date-recent_date-period-str-pdseries" title="Permanent link">¶</a></h3>
+<p>Retorna a série de retornos diários. Period pode ser mtd, ytd, qtr, 1m, 2m, 3m, etc.</p>
+<hr />
+<h3 id="calculate_volatilityasset-str-previous_date-recent_date-float"><code>calculate_volatility(asset: str, previous_date, recent_date) -&gt; float</code><a class="headerlink" href="#calculate_volatilityasset-str-previous_date-recent_date-float" title="Permanent link">¶</a></h3>
+<p>Volatilidade anualizada de retornos diários (std * sqrt(252)).</p>
+<hr />
+<h3 id="calculate_price_correlationasset1-asset2-previous_date-recent_date-float"><code>calculate_price_correlation(asset1, asset2, previous_date, recent_date) -&gt; float</code><a class="headerlink" href="#calculate_price_correlationasset1-asset2-previous_date-recent_date-float" title="Permanent link">¶</a></h3>
+<p>Correlação entre os retornos de dois ativos no período.</p>
+<hr />
+<h2 id="fundos-e-carteiras">💼 Fundos e Carteiras<a class="headerlink" href="#fundos-e-carteiras" title="Permanent link">¶</a></h2>
+<h3 id="get_positions_and_movementsfund-str-date-pddataframe"><code>get_positions_and_movements(fund: str, date) -&gt; pd.DataFrame</code><a class="headerlink" href="#get_positions_and_movementsfund-str-date-pddataframe" title="Permanent link">¶</a></h3>
+<p>Devolve posição do fundo com compras/vendas no dia.</p>
+<hr />
+<h3 id="get_fund_aumfund-str-date-datetimedate-float"><code>get_fund_aum(fund: str, date:  datetime.date) -&gt; float</code><a class="headerlink" href="#get_fund_aumfund-str-date-datetimedate-float" title="Permanent link">¶</a></h3>
+<p>Retorna o AUM (Assets Under Management) de um fundo numa data.</p>
+<hr />
+<h3 id="get_fund_pnlfund-str-previous_date-datetimedate-recent_date-datetimedate-pdseries"><code>get_fund_pnl(fund: str, previous_date: datetime.date, recent_date: datetime.date) -&gt; pd.Series</code><a class="headerlink" href="#get_fund_pnlfund-str-previous_date-datetimedate-recent_date-datetimedate-pdseries" title="Permanent link">¶</a></h3>
+<p>Série com o lucro/prejuízo do fundo no período.</p>
+<hr />
+<h3 id="run_return_analysisasset_or_df-dict"><code>run_return_analysis(asset_or_df, ...) -&gt; dict</code><a class="headerlink" href="#run_return_analysisasset_or_df-dict" title="Permanent link">¶</a></h3>
+<p>Análise de performance: CAGR, drawdown, sharpe, etc.</p>
+<hr />
+<h2 id="outros">🧠 Outros<a class="headerlink" href="#outros" title="Permanent link">¶</a></h2>
+<ul>
+<li>Datas devem ser <code>datetime.date</code></li>
+<li>Preços e retornos sempre assumem coluna <code>"Price"</code> por padrão</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Luxor Group
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
