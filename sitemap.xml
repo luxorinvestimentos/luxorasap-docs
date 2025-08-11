@@ -5,6 +5,46 @@
          <lastmod>2025-08-11</lastmod>
     </url>
     <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/architecture/file_tree/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/how_to/atualizar_comite/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/pipelines/run_daily_pnl/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/pipelines/run_extract_investors_data/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/pipelines/run_hist_alphas/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/pipelines/run_hist_attributions/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/pipelines/run_hist_lipi_aum/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/pipelines/run_hist_returns/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://SEU_DOMINIO/luxor_data_pipelines/pipelines/run_returns_luxor_custom/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
          <loc>https://SEU_DOMINIO/luxorasap/</loc>
          <lastmod>2025-08-11</lastmod>
     </url>
