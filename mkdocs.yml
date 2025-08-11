@@ -1,24 +1,124 @@
-site_name: LuxorASAP
-site_description: "Documentação oficial do toolbox Luxor para ingestão, leitura e análise de dados financeiros."
-site_author: Luxor Group
-repo_url: https://github.com/luxorinvestimentos/luxor-asap/
+# ─────────────  BÁSICO  ─────────────
+site_name: LuxorASAP Docs
+site_description: Documentação completa do stack LuxorASAP
+site_url: https://SEU_DOMINIO    # ajuste depois de publicar
+copyright: "© Luxor Group"
+
+# ──────────  TEMA (Material) ─────────
 theme:
   name: material
-  logo: images/luxor_logo.png
-  language: pt
-  features:
-    - navigation.instant
-    - content.code.copy
-    - navigation.sections
   palette:
-    primary: blue
-    accent: light blue
+    - scheme: default
+      primary: black               # substitua por 'teal' ou outro se preferir
+      accent: orange
+      # Toggle permanece apenas visual, não muda o esquema
+      toggle:
+        icon: material/weather-night
+        name: Alternar Dark Mode
+
+# colocando imagem de logo
+  logo: assets/logo_png.png
+  #favicon: assets/favicon.ico
+
+
 extra_css:
-  - styles/extra.css
+  - stylesheets/custom.css
+
+# ───────────  NAVEGAÇÃO  ────────────
 nav:
-  - Início: index.md
-  - Módulos:
-    - btgapi: btgapi.md
-    - datareader: datareader.md
-    - ingest: ingest.md
-    - utils: utils.md
+
+  - LuxorASAP Onedrive:
+    - Visão Geral: luxorasap_onedrive/index.md
+
+    - Arquitetura:
+        - Estrutura de Arquivos: luxorasap_onedrive/architecture/file_tree.md
+        - Bloomberg Data Pipeline: luxorasap_onedrive/architecture/bloomberg_data_pipeline.md
+        - Pipeline run_luxorASAP: luxorasap_onedrive/architecture/pipeline_luxorASAP.md
+        - Pipeline Carteira Online: luxorasap_onedrive/architecture/pipeline_carteira_online.md
+        - Pipeline Relatório de Retornos: luxorasap_onedrive/architecture/pipeline_returns_report.md
+        - Pipeline Source Bases: luxorasap_onedrive/architecture/pipeline_source_bases.md
+    - Módulos:
+        - carteira_online.production:
+            - portfolio_builder.py: luxorasap_onedrive/modules/carteira_online/production/portfolio_builder.md
+            - return_calculator.py: luxorasap_onedrive/modules/carteira_online/production/return_calculator.md
+            - cash_calculator.py: luxorasap_onedrive/modules/carteira_online/production/cash_calculator.md
+            - btg_data_extraction.py: luxorasap_onedrive/modules/carteira_online/production/btg_data_extraction.md
+            - asset_data_extraction.py: luxorasap_onedrive/modules/carteira_online/production/asset_data_extraction.md
+            - historical_data_extraction.py: luxorasap_onedrive/modules/carteira_online/production/historical_data_extraction.md
+            - leitor_carteira_excel.py: luxorasap_onedrive/modules/carteira_online/production/leitor_carteira_excel.md
+            - onedrive_file_redirect.py: luxorasap_onedrive/modules/carteira_online/production/onedrive_file_redirect.md
+        - source_bases.scripts:
+            - hist_concentration_updater.py: luxorasap_onedrive/modules/source_bases/scripts/hist_concentration_updater.md
+            - custom_funds_quotas_updater.py: luxorasap_onedrive/modules/source_bases/scripts/custom_funds_quotas_updater.md
+            - non_bbg_data_updater.py: luxorasap_onedrive/modules/source_bases/scripts/non_bbg_data_updater.md
+            - daily_pnl_updater.py: luxorasap_onedrive/modules/source_bases/scripts/daily_pnl_updater.md
+            - historical_quotas_updater.py: luxorasap_onedrive/modules/source_bases/scripts/historical_quotas_updater.md
+            - risk_metrics_updater.py: luxorasap_onedrive/modules/source_bases/scripts/risk_metrics_updater.md
+            - us_cash_updater.py: luxorasap_onedrive/modules/source_bases/scripts/us_cash_updater.md
+            - swaps_updater.py: luxorasap_onedrive/modules/source_bases/scripts/swaps_updater.md
+        - run_luxorASAP.py: luxorasap_onedrive/modules/run_luxorASAP.md
+        - market_data_extractor.py: luxorasap_onedrive/modules/market_data_extractor.md
+        - market_data_loader.py: luxorasap_onedrive/modules/market_data_loader.md
+        - source_bases_updater.py: luxorasap_onedrive/modules/source_bases_updater.md
+        - luxorDB_datareader.py: luxorasap_onedrive/modules/luxorDB_datareader.md
+        - luxorDB_dataloader.py: luxorasap_onedrive/modules/luxorDB_dataloader.md
+    - Planilhas: luxorasap_onedrive/planilhas/planilhas.md
+    - How To:
+        - Adicionar novo ativo: luxorasap_onedrive/how_to/add_new_asset.md
+        - Criar série de preços: luxorasap_onedrive/how_to/create_price_series.md
+
+  - LuxorASAP (PyPI):
+    - Visão Geral: luxorasap/index.md
+    - Módulos: 
+      - btgapi: luxorasap/btgapi.md
+      - datareader: luxorasap/datareader.md
+      - ingest: luxorasap/ingest.md
+      - utils: luxorasap/utils.md
+
+    
+
+
+
+# ───────  EXTENSÕES MARKDOWN  ───────
+markdown_extensions:
+  - admonition                   # caixas > Informação, Atenção…
+  - toc:
+      permalink: "¶"             # âncora nos títulos
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid        # ← diz ao SuperFences que “mermaid” é especial
+          class: mermaid       # ← gera <div class="mermaid">…</div>
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight           # syntax highlight extra
+  - pymdownx.snippets            # incluir trechos externos
+  - pymdownx.tabbed              # abas em exemplos
+  - attr_list                    # {#id .class} em blocos
+  - tables
+
+# ─────────────  PLUG-INS  ───────────
+plugins:
+  - macros
+  - search                       # busca interna
+  - mkdocstrings:
+      handlers:
+        python:
+          # Caminhos onde o mkdocstrings deve procurar os módulos.
+          # Ajuste conforme a posição real do código.
+          #
+          # Se a pasta do código estiver dentro deste mesmo repo:
+          #   paths: ["."]
+          #
+          # Se o código estiver numa pasta-irmã:
+          paths: ["/mnt/c/Users/Sergio/OneDrive - Luxor Investimentos (1)/projetos/LuxorASAP"]         # <── troque pelo seu caminho
+          options:
+            docstring_style: google       # numpy ou google
+            show_source: true             # link p/ origem
+
+# ─────  ARQUIVOS EXTRA (opcional) ────
+extra_javascript: []             # ex.: scripts/mermaid.min.js
+
+# ─────────────  BUILD  ──────────────
+watch:                           # quando rodar `mkdocs serve`
+  - mkdocs.yml
+  - docs/
+  - "/mnt/c/Users/Sergio/OneDrive - Luxor Investimentos (1)/projetos/LuxorASAP"                 # para auto-reload se código mudar
