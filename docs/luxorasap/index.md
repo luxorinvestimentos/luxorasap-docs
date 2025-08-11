@@ -1,33 +1,38 @@
-# 🧠 LuxorASAP
+# 🧠 LuxorASAP (PyPI)
 
-**Luxor Automatic System for Assets and Portfolios** é o toolbox oficial da Luxor para manipulação de dados de investimento, integração com provedores externos (BTG Pactual), e gerenciamento de pipelines de dados para análise, marcação e reporting.
+**Luxor Automatic System for Assets and Portfolios** é o **toolbox oficial** da Luxor para manipulação de dados de investimento, integração com provedores externos (ex.: BTG Pactual) e gerenciamento de pipelines de dados para análise, marcação e reporting.
 
-Projetado para automatizar tarefas recorrentes do time de gestão e analytics, o LuxorASAP provê uma interface limpa, extensível e segura para acessar:
+Este módulo faz parte do ecossistema **[LuxorASAP](../index.md)**, que centraliza diferentes ferramentas e pipelines utilizados pelo time de gestão e analytics.  
+Enquanto o repositório `luxorASAP-onedrive` representa o formato legado, e o `Luxor Data Pipelines` concentra os processos de ETL, o **LuxorASAP (PyPI)** é o **formato moderno e versionado via Git** — recomendado para novas implementações.
 
-- ✅ Tabelas financeiras em Parquet
-- ✅ API de relatórios do BTG Pactual
-- ✅ Registro e leitura de boletas offshore
-- ✅ Gravação incremental no ADLS (Azure Blob Storage)
-- ✅ Utilitários para DataFrames e schemas
+---
+
+## 📌 Principais Funcionalidades
+
+- ✅ Consulta de tabelas financeiras em **Parquet** no ADLS  
+- ✅ Wrapper para utilização da **API do BTG Pactual**
+- ✅ Gravação incremental e consistente no **Azure Blob Storage**  
+- ✅ Utilitários para **DataFrames** e manipulação de **schemas**  
 
 ---
 
 ## 📦 Estrutura de Módulos
 
-- [`btgapi`](luxorasap/btgapi.md): Integração autenticada com a API do BTG
-- [`datareader`](luxorasap/datareader.md): Consulta a dados de mercado e fundos
-- [`ingest`](luxorasap/ingest.md): Salvamento e atualização de tabelas no ADLS
-- [`utils`](luxorasap/utils.md): Leitura de arquivos binários e acesso ao blob
+- [`btgapi`](luxorasap/btgapi.md) → Wrapper para utilização da API do BTG  
+- [`datareader`](luxorasap/datareader.md) → Consulta a dados de mercado e fundos  
+- [`ingest`](luxorasap/ingest.md) → Salvamento e atualização de tabelas no ADLS  
+- [`utils`](luxorasap/utils.md) → Leitura de arquivos binários e acesso ao Blob  
 
 ---
 
 ## 🔑 Autenticação e Ambiente
 
-Algumas funcionalidades exigem credenciais armazenadas de forma segura. O acesso ao Blob Storage e à API do BTG requer:
+O uso de funcionalidades que acessam dados sensíveis exige credenciais configuradas.  
+As integrações com **Azure Blob Storage** e **BTG API** requerem:
 
 ### ✅ Variáveis de ambiente (recomendado)
 
-Crie um arquivo `.env` na raiz do seu projeto com o seguinte conteúdo:
+Crie um arquivo `.env` na raiz do projeto:
 
 ```bash
 # Azure Blob Storage
@@ -40,7 +45,7 @@ BTG_CLIENT_SECRET="seu_client_secret"
 
 ### 🧪 Alternativa
 
-Você também pode passar os parâmetros diretamente nas funções:
+Passe os parâmetros diretamente nas funções:
 
 ```python
 get_access_token(client_id="...", client_secret="...", test_env=False)
@@ -48,7 +53,7 @@ get_access_token(client_id="...", client_secret="...", test_env=False)
 
 ---
 
-## 🛠️ Exemplo de uso
+## 🛠️ Exemplo de Uso
 
 ```python
 from luxorasap.datareader import LuxorQuery
@@ -67,4 +72,4 @@ ticket = request_portfolio(token, "FUNDO XPTO", start_date, end_date)
 
 ## 📄 Licença
 
-Este projeto é de uso interno da Luxor Investimentos.
+Este módulo é **de uso interno** da Luxor Investimentos e está disponível para a equipe via instalação pelo [PyPI](https://pypi.org/project/luxorasap/).

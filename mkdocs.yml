@@ -73,7 +73,22 @@ nav:
       - btgapi: luxorasap/btgapi.md
       - datareader: luxorasap/datareader.md
       - ingest: luxorasap/ingest.md
-      - utils: luxorasap/utils.md
+      - utils: luxorasap/utils.
+
+  - Luxor Data Pipelines:
+    - Visão Geral: luxor_data_pipelines/index.md
+    - Arquitetura: 
+      - Estrutura de Arquivos: luxor_data_pipelines/architecture/file_tree.md
+    - Pipelines:
+      - daily_pnl: luxor_data_pipelines/pipelines/run_daily_pnl.md
+      - extract_investors_data: luxor_data_pipelines/pipelines/run_extract_investors_data.md
+      - hist_alphas: luxor_data_pipelines/pipelines/run_hist_alphas.md
+      - hist_attributions: luxor_data_pipelines/pipelines/run_hist_attributions.md
+      - hist_lipi_aum: luxor_data_pipelines/pipelines/run_hist_lipi_aum.md
+      - hist_returns: luxor_data_pipelines/pipelines/run_hist_returns.md
+      - returns_luxor_custom: luxor_data_pipelines/pipelines/run_returns_luxor_custom.md
+    - How To:
+      - Atualização Comitê Resultados: luxor_data_pipelines/how_to/atualizar_comite.md
 
     
 

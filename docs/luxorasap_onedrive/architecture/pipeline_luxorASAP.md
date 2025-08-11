@@ -60,6 +60,21 @@ Através de uma instância do `luxorDB_dataloader`, o script verifica continuame
 
 ### 2. Processamento de Trades e Posições
 
+<div align="center">
+```mermaid
+flowchart TD
+    subgraph "**Processamento de Trades**"
+        direction LR
+        A[trades.parquet] --> B{Processar Trades};
+        B --> C[last_positions.parquet];
+        B --> D[hist_positions.parquet];
+        B --> E[cash_movements.parquet];
+        B --> F[hist_positions_by_bank.parquet];
+        B --> G[last_positions_by_bank.parquet];
+    end
+```
+</div>
+
 A cada 10 segundos, o script verifica a existência de novos trades na tabela `enriched/trades.parquet`.
 
 -   **Primeira execução do dia**: O script roda no **modo reset**, reprocessando todas as transações da tabela `trades` e gerando todas as tabelas de posição do zero.
@@ -70,6 +85,8 @@ A cada 10 segundos, o script verifica a existência de novos trades na tabela `e
     -   `cash_movements.parquet`
     -   `hist_positions_by_bank.parquet`
     -   `last_positions_by_bank.parquet`
+
+
 
 ### 3. Detecção de Alterações e Modo Reset
 
