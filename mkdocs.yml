@@ -77,8 +77,7 @@ nav:
 
   - Luxor Data Pipelines:
     - Visão Geral: luxor_data_pipelines/index.md
-    - Arquitetura: 
-      - Estrutura de Arquivos: luxor_data_pipelines/architecture/file_tree.md
+    - Arquitetura: luxor_data_pipelines/architecture.md
     - Pipelines:
       - daily_pnl: luxor_data_pipelines/pipelines/run_daily_pnl.md
       - extract_investors_data: luxor_data_pipelines/pipelines/run_extract_investors_data.md
