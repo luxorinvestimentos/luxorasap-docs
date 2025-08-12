@@ -16,7 +16,7 @@
         <link rel="prev" href="../luxorasap/ingest/">
       
       
-        <link rel="next" href="architecture/file_tree/">
+        <link rel="next" href="architecture/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#luxor-data-pipelines" class="md-skip">
+        <a href="#visao-geral-luxor-data-pipelines" class="md-skip">
           Skip to content
         </a>
       
@@ -1533,54 +1533,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos" class="md-nav__link">
+  <a href="#objetivo" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Objetivos
+      🎯 Objetivo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#arquitetura" class="md-nav__link">
+  <a href="#estrutura-do-projeto" class="md-nav__link">
     <span class="md-ellipsis">
-      🏗 Arquitetura
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fontes-de-dados-tipicas" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔌 Fontes de Dados Típicas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ferramentas-e-integracoes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠 Ferramentas e Integrações
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#organizacao-da-documentacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 Organização da Documentação
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#licenca" class="md-nav__link">
-    <span class="md-ellipsis">
-      📄 Licença
+      🏗 Estrutura do Projeto
     </span>
   </a>
   
@@ -1601,20 +1565,9 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="architecture/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -1623,42 +1576,7 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            Arquitetura
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="architecture/file_tree/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Estrutura de Arquivos
-    
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1974,54 +1892,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos" class="md-nav__link">
+  <a href="#objetivo" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Objetivos
+      🎯 Objetivo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#arquitetura" class="md-nav__link">
+  <a href="#estrutura-do-projeto" class="md-nav__link">
     <span class="md-ellipsis">
-      🏗 Arquitetura
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fontes-de-dados-tipicas" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔌 Fontes de Dados Típicas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ferramentas-e-integracoes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠 Ferramentas e Integrações
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#organizacao-da-documentacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 Organização da Documentação
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#licenca" class="md-nav__link">
-    <span class="md-ellipsis">
-      📄 Licença
+      🏗 Estrutura do Projeto
     </span>
   </a>
   
@@ -2043,72 +1925,29 @@
 
 
 
-<h1 id="luxor-data-pipelines">🚀 Luxor Data Pipelines<a class="headerlink" href="#luxor-data-pipelines" title="Permanent link">¶</a></h1>
-<p>O <strong>Luxor Data Pipelines</strong> é o repositório oficial da Luxor Investimentos para <strong>processos de ETL (Extract, Transform, Load)</strong> que alimentam o nosso datalake e sustentam análises, marcação de portfólio e reporting.<br />
-Ele foi concebido para centralizar e padronizar a ingestão de dados de diversas fontes internas e externas, seguindo as boas práticas de arquitetura <strong>Medallion</strong> (<em>Bronze → Silver → Gold</em>).</p>
-<p>Este repositório é o destino natural para a <strong>migração dos pipelines atualmente no <code>luxorASAP-onedrive</code></strong>, permitindo melhor versionamento, modularização e integração contínua.</p>
+<h1 id="visao-geral-luxor-data-pipelines">📊 Visão Geral — Luxor Data Pipelines<a class="headerlink" href="#visao-geral-luxor-data-pipelines" title="Permanent link">¶</a></h1>
+<p>O <strong>Luxor Data Pipelines</strong> é a plataforma centralizada da Luxor para <strong>orquestrar e executar processos de ETL</strong> (Extração, Transformação e Carga) relacionados a dados de investimentos.<br />
+Todos os pipelines são executados <strong>no Azure</strong>, utilizando <strong>Azure Functions</strong> como mecanismo de agendamento e disparo, garantindo <strong>escalabilidade, flexibilidade e baixo custo operacional</strong>.</p>
 <hr />
-<h2 id="objetivos">📌 Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">¶</a></h2>
+<h2 id="objetivo">🎯 Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">¶</a></h2>
+<p>O projeto foi criado para:</p>
 <ul>
-<li><strong>Centralizar</strong> todos os pipelines de dados em um ambiente versionado.</li>
-<li><strong>Padronizar</strong> a ingestão, transformação e carga de dados.</li>
-<li><strong>Garantir rastreabilidade</strong> e reprodutibilidade nos fluxos de ETL.</li>
-<li><strong>Facilitar a manutenção</strong> e evolução das rotinas de dados.</li>
-<li><strong>Integrar</strong> com o ecossistema do <strong>LuxorASAP (PyPI)</strong> para reaproveitar módulos e utilitários.</li>
+<li>Automatizar rotinas de atualização de dados de mercado, fundos e operações.</li>
+<li>Garantir <strong>consistência e reprodutibilidade</strong> no processamento de dados.</li>
+<li>Facilitar a <strong>manutenção</strong> e <strong>evolução</strong> dos pipelines.</li>
+<li>Integrar de forma nativa com <strong>Azure Blob Storage (ADLS)</strong> e outras fontes internas.</li>
 </ul>
 <hr />
-<h2 id="arquitetura">🏗 Arquitetura<a class="headerlink" href="#arquitetura" title="Permanent link">¶</a></h2>
-<p>O <strong>Luxor Data Pipelines</strong> segue o padrão <strong>Medallion Architecture</strong>:</p>
+<h2 id="estrutura-do-projeto">🏗 Estrutura do Projeto<a class="headerlink" href="#estrutura-do-projeto" title="Permanent link">¶</a></h2>
+<p>O repositório é organizado em duas áreas principais:</p>
 <ol>
-<li><strong>Bronze</strong>  </li>
-<li>Dados brutos (<em>raw</em>) provenientes de fontes externas ou internas.  </li>
-<li>
-<p>Armazenamento fiel ao formato original, com mínima transformação.  </p>
-</li>
-<li>
-<p><strong>Silver</strong>  </p>
-</li>
-<li>Dados tratados e normalizados.  </li>
-<li>
-<p>Limpeza de inconsistências, aplicação de schemas, padronização de chaves e formatos.  </p>
-</li>
-<li>
-<p><strong>Gold</strong>  </p>
-</li>
-<li>Dados prontos para consumo analítico e dashboards.  </li>
-<li>Enriquecimento, agregações e junções otimizadas para consultas.</li>
+<li><strong><code>pipelines/</code></strong> → Scripts contendo a lógica de cada processo de ETL, sempre com um método <code>run()</code> que pode receber parâmetros de execução.</li>
+<li><strong><code>run_[NOME_DO_PIPELINE]/</code></strong> → Diretórios que representam Azure Functions, responsáveis por orquestrar e agendar a execução dos scripts de <code>pipelines/</code>.</li>
 </ol>
-<pre class="mermaid"><code>flowchart LR
-    A[Bronze: Dados Brutos] --&gt; B[Silver: Dados Tratados]
-    B --&gt; C[Gold: Dados Prontos para Análise]</code></pre>
+<blockquote>
+<p>Para detalhes completos da organização interna, consulte a seção <a href="architecture/">Arquitetura</a>.</p>
+</blockquote>
 <hr />
-<h2 id="fontes-de-dados-tipicas">🔌 Fontes de Dados Típicas<a class="headerlink" href="#fontes-de-dados-tipicas" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>Planilhas e arquivos</strong> armazenados no OneDrive (dados mestres, input manual)</li>
-<li><strong>APIs de mercado</strong> (Bloomberg, BTG Pactual)</li>
-<li><strong>Dados do administrador de fundos</strong></li>
-<li><strong>Bases internas</strong> de marcação e precificação</li>
-</ul>
-<hr />
-<h2 id="ferramentas-e-integracoes">🛠 Ferramentas e Integrações<a class="headerlink" href="#ferramentas-e-integracoes" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>LuxorASAP (PyPI)</strong> para ingestão e utilitários de DataFrames.</li>
-<li><strong>Azure Data Lake Storage (ADLS)</strong> para armazenamento em Parquet.</li>
-<li><strong>Power BI</strong> para consumo das camadas Gold.</li>
-<li><strong>Automação</strong> via scripts Python e orquestração agendada.</li>
-</ul>
-<hr />
-<h2 id="organizacao-da-documentacao">📂 Organização da Documentação<a class="headerlink" href="#organizacao-da-documentacao" title="Permanent link">¶</a></h2>
-<p>Esta documentação está dividida em:</p>
-<ol>
-<li><strong>Arquitetura</strong> → Visão geral dos pipelines e seus fluxos.</li>
-<li><strong>Pipelines</strong> → Detalhes de cada processo ETL (extração, transformação, carga).</li>
-<li><strong>How To</strong> → Guias rápidos para manutenção e criação de novos pipelines.</li>
-<li><strong>Boas Práticas</strong> → Padrões de nomenclatura, versionamento e tratamento de dados.</li>
-</ol>
-<hr />
-<h2 id="licenca">📄 Licença<a class="headerlink" href="#licenca" title="Permanent link">¶</a></h2>
-<p>Este repositório é <strong>de uso interno</strong> da Luxor Investimentos.</p>
 
 
 

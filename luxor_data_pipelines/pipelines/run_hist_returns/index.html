@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#pipeline-hist_returns" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1500,20 +1505,9 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -1522,42 +1516,7 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            Arquitetura
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../architecture/file_tree/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Estrutura de Arquivos
-    
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1731,6 +1690,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    hist_returns
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1743,6 +1717,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Descrição
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Descrição">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidade
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agendamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏰ Agendamento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1873,6 +1899,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Descrição
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Descrição">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidade
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agendamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏰ Agendamento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1888,9 +1957,52 @@
 
 
 
-  <h1>hist_returns</h1>
+<p>Pipeline para criação da tabela hist_returns.
+Para todos os ativos da tabela assets, obtém a chave de preço e, utilizando o método get_pct_changes do módulo luxorasap, calcula os retornos mtd, ytd, qtr, 12m, 24 e 36m, nas moedas brl, usd e local fazendo uma atualização incremental da tabela hist_returns no ADLS. Utiliza sempre o último dia corrido do mês anterior como data de referência do cálculo. 
+O pipeline está agendado para executar todos os dias uteis às 15h30m BRT.</p>
+<h1 id="pipeline-hist_returns">📈 Pipeline <code>hist_returns</code><a class="headerlink" href="#pipeline-hist_returns" title="Permanent link">¶</a></h1>
+<div align="center">
+<pre class="mermaid"><code>flowchart TD
+    assets[("assets&lt;br&gt;(enriched/parquet)")]
+    prices[("tabelas de preço&lt;br&gt;(enriched/parquet)")]
+    extrair["Obter chaves de preço"]
+    transformar["Calcular retornos&lt;br&gt;(MTD, YTD, QTR, 12m, 24m, 36m)"]
+    output[("hist_returns&lt;br&gt;(enriched/parquet)")]
 
+    assets --&gt; |get_table| extrair
+    prices --&gt; |get_pct_changes| transformar
+    extrair --&gt; transformar
+    transformar --&gt; |Atualização incremental| output
+</code></pre>
+</div>
 
+<h2 id="descricao">📝 Descrição<a class="headerlink" href="#descricao" title="Permanent link">¶</a></h2>
+<p>O pipeline <strong><code>hist_returns</code></strong> é responsável pela criação e atualização incremental da tabela <strong><code>hist_returns</code></strong> no <strong>Azure Data Lake Storage (ADLS)</strong>.</p>
+<h3 id="funcionalidade">Funcionalidade<a class="headerlink" href="#funcionalidade" title="Permanent link">¶</a></h3>
+<ul>
+<li>Para <strong>todos os ativos</strong> listados na tabela <code>assets</code>:</li>
+<li>Obtém a <strong>chave de preço</strong> associada.</li>
+<li>Utiliza o método <strong><code>get_pct_changes</code></strong> do módulo <code>luxorasap</code> para calcular os seguintes retornos:<ul>
+<li><strong>MTD</strong> (Month-to-Date)</li>
+<li><strong>YTD</strong> (Year-to-Date)</li>
+<li><strong>QTR</strong> (Quarter-to-Date)</li>
+<li><strong>12m</strong> (12 meses)</li>
+<li><strong>24m</strong> (24 meses)</li>
+<li><strong>36m</strong> (36 meses)</li>
+</ul>
+</li>
+<li>Calcula cada retorno em <strong>BRL</strong>, <strong>USD</strong> e <strong>moeda local</strong>.</li>
+<li>Atualiza de forma <strong>incremental</strong> a tabela <code>hist_returns</code> no ADLS.</li>
+<li>A data de referência utilizada é <strong>sempre o último dia corrido do mês anterior</strong>.</li>
+</ul>
+<hr />
+<h2 id="agendamento">⏰ Agendamento<a class="headerlink" href="#agendamento" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Execução:</strong> Todos os <strong>dias úteis</strong>  </li>
+<li><strong>Horário:</strong> 15h30 (BRT)  </li>
+<li><strong>Trigger:</strong> <code>timerTrigger</code> no Azure Functions</li>
+</ul>
+<hr />
 
 
 
